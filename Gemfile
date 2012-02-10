@@ -20,7 +20,6 @@ group :development, :test do
   #gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'unicorn'
   gem 'ruby-debug19'
-  gem 'cucumber'
   gem 'cucumber-rails'
   gem 'rspec-rails'
   gem 'pickler'

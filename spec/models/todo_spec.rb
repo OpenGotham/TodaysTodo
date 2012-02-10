@@ -5,7 +5,7 @@ describe Todo do
   def valid_todo
     Todo.new(title: "A Title")
   end
-
+ 
   describe "completed_on_time?" do
     it "should return true if its completed date is before its due date" do
       todo = Todo.new
@@ -49,6 +49,12 @@ describe Todo do
         todo = Todo.new()
         todo.save
         todo.should have_at_least(1).errors_on(:title)
+      end
+      it "should have unique title by user_id" do
+	user = Fabricate :user
+        Fabricate :todo, title: "fail", user: user
+	todo = Fabricate.build :todo, title: "fail",user: user
+        todo.should_not be_valid
       end
     end
   end

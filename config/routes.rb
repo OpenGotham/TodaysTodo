@@ -4,7 +4,7 @@ Test1::Application.routes.draw do
   get "welcome/index"
 
   devise_for :users
-
+  resources :users, :only => :show
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
